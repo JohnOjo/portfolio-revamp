@@ -1,9 +1,9 @@
-@import '../../constants/colours.scss';
+@import "tailwindcss";
 
 .footnote-container {
     display: flex;
     flex-direction: column;
-    background-color: secondary-color;
+    background-color: var(--secondary-color);
     row-gap: 1.5rem;
     padding-top: 3rem;
     padding-bottom: 2.0625rem;
@@ -13,12 +13,12 @@
 .footnote-middle {
     font-weight: 400;
     font-size: 9px;
-    color: $primary-color;
+    color: var(--primary-color);
     text-transform: uppercase;
 }
 
 .footnote-ends {
     font-weight: 400;
     font-size: 9px;
-    color: $body-text-color;
+    color: var(--body-text-color);
 }
