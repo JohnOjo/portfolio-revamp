@@ -1,0 +1,314 @@
+@import "tailwindcss";
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --primary-color: #EF6D58;
+    --primary-light-color: #ef9358;
+    --secondary-color: #28293E;
+    --body-text-color: #FFFFFF;
+    --alternate-body-text-color: #212121;
+    --background-color: #FDF0E9;
+    --tertiary-color: #DDA803;
+    --box-shadow: rgba(0, 0, 0, 0.52);
+    --fire-fly-color: #e9e9eb;
+}
+
+.list {
+    list-style-image: url('../../assets/check.svg');
+    transition: transform .2s
+}
+
+.list:hover {
+    transform: scale(1.02);
+}
+
+.list-span {
+    top: -10px; 
+    position: relative;
+    line-height: 25px;
+}
+
+.projects-container {
+    display: flex;
+    padding: 2% 0%;
+    background-color: $secondary-color;
+    flex-direction: column;
+}
+
+.projects-left-container, .projects-right-container {
+    display: flex;
+    padding: 2% 0%;
+    background-color: $background-color;
+    flex-direction: column;
+}
+
+.projects-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 2rem;
+    color: $primary-color;   
+}
+
+.projects-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: $secondary-color;
+}
+
+.my-work-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: 800;
+    font-size: 3.5rem;
+    color: $body-text-color;
+    text-transform: uppercase;
+}
+
+.other-project-container {
+    display: flex;  
+    flex-direction: column;  
+    padding: 2% 2%;
+}
+
+.project-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1rem;
+    color: $body-text-color;
+}
+
+.project-card-container {
+    margin: 0.25rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: 35.625rem;
+    max-width: 35.625rem;
+    height: 26rem;
+    mix-blend-mode: normal;
+    border-radius: 0.375rem;
+    margin-right: 1.5rem;
+    box-shadow: 0rem 0.5rem 0.5rem $box-shadow;
+    background-image: linear-gradient(40deg, #5C2000 0%, rgba(0, 0, 0, 0.52) 50%), url('../../assets/project_image.png');
+}
+
+.slide {
+    position: relative;
+    top: 100px;
+    transition: 1s;
+}
+
+.project-container:hover .slide {
+    transition: 1s;
+    top: 200px;
+}
+
+.project-card-content {    
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 2rem;
+}
+
+.project-card-title {
+    font-size: 1.75rem;
+    color: $body-text-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}    
+
+.project-card-chips-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.25rem;
+    position: relative;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $body-text-color;
+}
+
+.project-text-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;    
+    list-style-position: outside;
+}
+
+.project-body {
+    font-size: 0.5rem;
+    width: 6rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.project-technologies-used-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    width: fit-content;
+    border-radius: 1rem;
+    background: $background-color;
+    box-shadow: 0rem 0.25rem 0.25rem $body-text-color;
+}
+
+.project-technologies-used {
+    width: 4rem;
+    height: 4rem;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.project-technologies-margin {
+    margin-left: 13rem;
+}
+
+.link-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.link-info {
+    font-weight: bold;
+}
+
+.link {    
+    word-break: break-all;
+    color: #4F94CD;
+}
+
+.chip-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1rem;
+    padding: 2% 4%;
+}
+
+.chip-flexible-width {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary-color;
+    width: fit-content;
+    padding: 0% 3%;
+    height: 1.5rem;
+    border-radius: 1.1875rem;
+    font-weight: 400;
+    font-size: 1rem;
+    color: $body-text-color; 
+    white-space: nowrap;
+    box-shadow: 0rem 0.1rem 0.1rem $primary-light-color;
+}
+
+.chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary-color;
+    width: 13.5625rem;
+    height: 2.375rem;
+    border: 0rem;
+    border-radius: 1.1875rem;
+    font-weight: 400;
+    font-size: 1rem;
+    color: $body-text-color;
+    cursor: pointer;    
+    box-shadow: 0rem 0.1rem 0.1rem $primary-light-color;    
+    margin: 0.5rem;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.chip-shade {
+    background: rgba(239, 109, 88, 0.2);
+}
+
+@media only screen and (max-width: 1040px) {
+    .project-container {
+        flex-wrap: wrap;
+        row-gap: 8rem;
+    }
+}
+
+@media only screen and (max-width: 728px) {
+    .project-card-container {
+        min-width: 23.75rem;
+        max-width: 23.75rem;
+        height: 17.3rem;
+    }
+
+    .project-card-title {
+        font-size: 1.4rem;
+    }
+
+    .slide {
+        position: relative;
+        top: auto;
+        transition: 1s;
+    }
+    
+    .project-container:hover .slide {
+        transition: 1s;
+        top: auto;
+    }
+
+    .list:hover {
+        transform: scale(1);
+    }
+
+    .project-card-chips-container {
+        flex-wrap: wrap;
+        row-gap: 0.25rem;
+    }
+    
+    .project-technologies-used-list-container {
+        display: none;
+    }
+
+    .project-card-chips-container {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .chip-container {
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+    
+    .project-card-container {
+        min-width: 11.87rem;
+        max-width: 11.87rem;
+        height: 8.525rem;
+    }
+}
+
+@media only screen and (max-width: 260px) {
+    .project-card-container  {
+        min-width: 8rem;
+        max-width: 8rem;
+        height: 8rem;
+    }
+}

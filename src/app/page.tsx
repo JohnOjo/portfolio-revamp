@@ -25,6 +25,8 @@ import JohnImage from '../assets/john_image.png'
 import TanEllipse from '../assets/tan_ellipse.svg'
 import BrownEllipse from '../assets/brown_ellipse.svg'
 import "./Home.css";
+import About from "./components/About/About";
+import Header from "./components/Header/Header";
 
 export default function Home() {
     const componentDidMount = () => {
@@ -66,22 +68,24 @@ export default function Home() {
         }
     }
       
-  const bioTitle = 'Hi! I\'m John Ojo and I solve problems'
-        const bioSubTitleStart = 'Software Engineer |'
-        const bioSubTitleEnd = ' AWS Certified | Microsoft Azure Certified'
-        const bioBody = 'What I love the most about my field is that it\'s all about solving problems, challenging each other as a team, enhancing user experience and continuously improving. I want to be part of a team that thinks differently and has various approaches to problem-solving while adding value to people. I want to be a bridge between customers and their solutions, and I want to build software that inspires and makes an impact.'
-        const linkedInLink = 'https://www.linkedin.com/in/john-ojo-b2b24115b/'
-        const leetCodeLink = 'https://leetcode.com/johnojo97/'
-        const technologiesUsed = [
-            { name: 'Java', logo: Java }, { name: 'React', logo: ReactImage }, { name: 'Node.js', logo: NodeJs },
-            { name: '.NET Core', logo: NetCore }, { name: 'AWS', logo: AmazonWebServices }, { name: 'Azure', logo: Azure },
-            { name: 'Kubernetes', logo:  Kubernetes }, { name: 'Docker', logo: Docker }, { name: 'Angular', logo: Angular }, { name: 'PostgreSQL', logo: Postgresql },
-            { name: 'Express', logo: Express }, { name: 'TypeScript', logo: TypeScript }, { name: 'JavaScript', logo: JavaScript },
-            { name: 'C#', logo:  CSharp }, { name: 'HTML', logo:  Html }, { name: 'CSS', logo:  Css }, { name: 'MongoDB', logo: MongoDB },
-        ]
+    const bioTitle = 'Hi! I\'m John Ojo and I solve problems'
+    const bioSubTitleStart = 'Software Engineer |'
+    const bioSubTitleEnd = ' AWS Certified | Microsoft Azure Certified'
+    const bioBody = 'What I love the most about my field is that it\'s all about solving problems, challenging each other as a team, enhancing user experience and continuously improving. I want to be part of a team that thinks differently and has various approaches to problem-solving while adding value to people. I want to be a bridge between customers and their solutions, and I want to build software that inspires and makes an impact.'
+    const linkedInLink = 'https://www.linkedin.com/in/john-ojo-b2b24115b/'
+    const leetCodeLink = 'https://leetcode.com/johnojo97/'
+    const technologiesUsed = [
+        { name: 'Java', logo: Java }, { name: 'React', logo: ReactImage }, { name: 'Node.js', logo: NodeJs },
+        { name: '.NET Core', logo: NetCore }, { name: 'AWS', logo: AmazonWebServices }, { name: 'Azure', logo: Azure },
+        { name: 'Kubernetes', logo:  Kubernetes }, { name: 'Docker', logo: Docker }, { name: 'Angular', logo: Angular }, { name: 'PostgreSQL', logo: Postgresql },
+        { name: 'Express', logo: Express }, { name: 'TypeScript', logo: TypeScript }, { name: 'JavaScript', logo: JavaScript },
+        { name: 'C#', logo:  CSharp }, { name: 'HTML', logo:  Html }, { name: 'CSS', logo:  Css }, { name: 'MongoDB', logo: MongoDB },
+    ]
 
   return (
     <div className="App">
+        <Header/>
+        {/* {generateFireFlies()} */}
       <div className={'about-me-container'}>
           <div className={'about-me-bio'}>
               <Image className={'name-in-code'} src={NameInCode} alt={'name'} />
@@ -115,6 +119,7 @@ export default function Home() {
                 {generateTechnologies(technologiesUsed)}
             </div>
         </div>
+        <About/>
     </div>
   );
 }
