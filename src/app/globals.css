@@ -12,6 +12,7 @@
   --tertiary-color: #dda803;
   --box-shadow: rgba(0, 0, 0, 0.52);
   --fire-fly-color: #e9e9eb;
+  --header-button-animation: all 0.4s ease-in-out;
 }
 
 @theme inline {

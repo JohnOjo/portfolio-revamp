@@ -1,0 +1,30 @@
+.technology-used-container {
+  display: grid;
+  grid-template-rows: 80% 20%;
+  justify-content: center;
+  align-items: center;
+  margin: 0.25rem;
+}
+
+.technology-used {
+  width: 10rem;
+  height: 10rem;
+  flex: 0 1 calc(20% - 8px);
+}
+
+.technology-name {
+  justify-self: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .technology-used {
+    animation: technology-used-scale infinite 5s cubic-bezier(1, 1, 1, 1)
+      alternate-reverse;
+  }
+}
+
+@keyframes technology-used-scale {
+  from {
+    transform: scale(70%);
+  }
+}
