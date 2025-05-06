@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { TECHNOLOGIES_USED } from './constants/headerConstants'
 import Angular from '../assets/angular.svg'
 import AmazonWebServices from '../assets/amazon_web_services.svg'
 import NodeJs from '../assets/nodejs.svg'
@@ -26,6 +27,45 @@ import BrownEllipse from '../assets/brown_ellipse.svg'
 import "./Home.css";
 
 export default function Home() {
+    const componentDidMount = () => {
+        window.addEventListener('scroll', reveal)
+    }
+
+    const componentWillUnmount = () => {
+        window.removeEventListener('scroll', reveal)
+    }
+
+    const reveal = () => {
+        const reveals = document.querySelectorAll('.reveal')
+
+        for (let i = 0; i < reveals.length; i++) {
+            const windowHeight = window.innerHeight
+            const elementTop = reveals[i].getBoundingClientRect().top
+            const elementVisible = 80
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add('active')
+            } else {
+                reveals[i].classList.remove('active')
+            }
+        }
+    }
+
+    const generateTechnologies = (technologies: any[]) => {
+        if (technologies?.length > 0) {
+            return technologies?.map((technology, index) => {
+                return(
+                    <div className={'technology-used-container'} key={index}>
+                        <Image className={'technology-used'} src={technology?.logo} alt={'technology'}/>
+                        <div className={'technology-name'}>
+                            {technology?.name}
+                        </div>
+                    </div>
+                )
+            })
+        }
+    }
+      
   const bioTitle = 'Hi! I\'m John Ojo and I solve problems'
         const bioSubTitleStart = 'Software Engineer |'
         const bioSubTitleEnd = ' AWS Certified | Microsoft Azure Certified'
@@ -41,7 +81,7 @@ export default function Home() {
         ]
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="App">
       <div className={'about-me-container'}>
           <div className={'about-me-bio'}>
               <Image className={'name-in-code'} src={NameInCode} alt={'name'} />
@@ -69,6 +109,12 @@ export default function Home() {
               <Image className={'about-me-image'} src={JohnImage} alt={'John'}/>
           </div>
       </div>
+      <div className={'technologies-container'}>
+            <div className={'technologies-title'}>{TECHNOLOGIES_USED}</div>
+            <div className={'technologies-list-container'}>
+                {generateTechnologies(technologiesUsed)}
+            </div>
+        </div>
     </div>
   );
 }

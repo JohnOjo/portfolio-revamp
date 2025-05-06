@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --primary-color: #EF6D58;
+    --primary-light-color: #ef9358;
+    --secondary-color: #28293E;
+    --body-text-color: #FFFFFF;
+    --alternate-body-text-color: #212121;
+    --background-color: #FDF0E9;
+    --tertiary-color: #DDA803;
+    --box-shadow: rgba(0, 0, 0, 0.52);
+    --fire-fly-color: #e9e9eb;
+  }
+
 .about-me-container {
     display: flex;
     align-items: center;
@@ -30,7 +44,7 @@
     justify-content: space-around;
     font-weight: 800;
     font-size: 3.4375rem;
-    color: $body-text-color;
+    color: var(--body-text-color);
 }
 
 .about-me-subtitle-start {
@@ -38,7 +52,7 @@
     align-items: center;
     justify-content: space-around;
     font-size: 1.5rem;
-    color: $tertiary-color;
+    color: var(--tertiary-color);
 }
 
 .about-me-subtitle-end {
@@ -46,7 +60,7 @@
     align-items: center;
     justify-content: space-around;
     font-size: 1.5rem;
-    color: $body-text-color;
+    color: var(--body-text-color);
 }
 
 .about-me-body {
@@ -54,7 +68,7 @@
     align-items: center;
     justify-content: space-around;
     font-size: 1rem;
-    color: $body-text-color;
+    color: var(--body-text-color);
 }
 
 .contact-icons-container {
@@ -174,7 +188,7 @@
 .technologies-container {
     display: flex;
     padding: 2% 0%;
-    background-color: $background-color;
+    background-color: var(--background-color);
     flex-direction: column;
 }
 
