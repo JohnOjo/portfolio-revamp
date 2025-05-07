@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+.technologies-title {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #28293e;
+}
+
+.technologies-container {
+  display: flex;
+  padding: 2% 0%;
+  background-color: var(--background-color);
+  flex-direction: column;
+}
+
+.technologies-list-container {
+  display: flex;
+  padding: 2% 10%;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+}
