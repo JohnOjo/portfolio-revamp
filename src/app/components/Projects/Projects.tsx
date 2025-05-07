@@ -2,9 +2,9 @@
 import { useState } from "react";
 import "./Projects.css";
 import { MY_WORK } from "../../constants/headerConstants";
-import { generateFireFlies } from "../../helpers/animationHelper";
 import Image from "next/image";
 import { favouriteProjects, otherProjects } from "@/app/data/projectsData";
+import FireFlies from "../FireFlies/FireFlies";
 
 const Projects = () => {
   const [showFavouriteProjects, setShowFavouriteProjects] =
@@ -116,7 +116,7 @@ const Projects = () => {
 
   return (
     <div className={"projects-container"}>
-      {generateFireFlies()}
+      <FireFlies />
       <div className={"projects-title"}>{"Portfolio"}</div>
       <div className={"my-work-title"}>{MY_WORK}</div>
       <div className={"chip-container"}>
