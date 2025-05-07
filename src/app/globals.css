@@ -11,6 +11,7 @@
   --background-color: #fdf0e9;
   --tertiary-color: #dda803;
   --box-shadow: rgba(0, 0, 0, 0.52);
+  --fire-fly-color: #e9e9eb;
   --header-button-animation: all 0.4s ease-in-out;
 }
 
@@ -64,4 +65,96 @@ div {
 .reveal.active {
   transform: translateY(0);
   opacity: 1;
+}
+
+.circle-container {
+  --particleNum: 200;
+  --particleColor: var(--fire-fly-color);
+
+  position: absolute;
+  transform: translateY(-10vh);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  .circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    mix-blend-mode: screen;
+    background-image: radial-gradient(
+      var(--fire-fly-color),
+      var(--fire-fly-color) 10%,
+      hsla(180, 100%, 80%, 0) 56%
+    );
+
+    animation: fadein-frames 200ms infinite, scale-frames 2s infinite;
+
+    @keyframes fade-frames {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes scale-frames {
+      0% {
+        transform: scale3d(0.4, 0.4, 1);
+      }
+
+      50% {
+        transform: scale3d(2.2, 2.2, 1);
+      }
+
+      100% {
+        transform: scale3d(0.4, 0.4, 1);
+      }
+    }
+  }
+
+  --particleBaseSize: 8;
+
+  @for --i from 1 through $particleNum {
+    &:nth-child(var(--i)) {
+      --circleSize: random(var(--particleBaseSize));
+      width: var(--circleSize) + px;
+      height: var(--circleSize) + px;
+
+      --startPositionY: random(10) + 100;
+      --framesName: "move-frames-" + $i;
+      --moveDuration: 28000 + random(9000) + ms;
+
+      animation-name: var(--framesName);
+      animation-duration: var(--moveDuration);
+      animation-delay: random(37000) + ms;
+
+      @keyframes var(--framesName) {
+        from {
+          transform: translate3d(
+            #{random(100) + vw},
+            #{var(--startPositionY) + vh},
+            0
+          );
+        }
+
+        to {
+          transform: translate3d(
+            #{random(100) + vw},
+            #{- var(--startPositionY) - random(30) + vh},
+            0
+          );
+        }
+      }
+
+      .circle {
+        animation-delay: random(4000) + ms;
+      }
+    }
+  }
 }
