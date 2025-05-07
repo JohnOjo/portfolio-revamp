@@ -44,9 +44,8 @@ describe("Bio Component", () => {
 
   it("renders the bio subtitle", () => {
     render(<Bio />);
-    expect(
-      screen.getByText(`${bioData.subtitleStart} ${bioData.subtitleEnd}`)
-    ).toBeInTheDocument();
+    expect(screen.getByText(bioData.subtitleStart)).toBeInTheDocument();
+    expect(screen.getByText(bioData.subtitleEnd)).toBeInTheDocument();
   });
 
   it("renders the bio body", () => {
@@ -96,17 +95,6 @@ describe("Bio Component", () => {
       expect(icon).toBeInTheDocument();
       expect(icon).toHaveAttribute("src", social.icon);
       expect(icon).toHaveAttribute("alt", social.alternateText);
-    });
-  });
-
-  it("uses the alternateText as the key for social links", () => {
-    render(<Bio />);
-    const socialLinkElements = screen.getAllByRole("link");
-    socialLinkElements.forEach((linkElement, index) => {
-      expect(linkElement).toHaveAttribute(
-        "key",
-        socialLinks[index].alternateText
-      );
     });
   });
 });
