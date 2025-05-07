@@ -4,12 +4,12 @@ import Image from "next/image";
 
 const Bio = () => {
   const renderSocialLinks = () => {
-    return socialLinks.map((socialLink, index) => (
+    return socialLinks.map((socialLink) => (
       <a
         href={socialLink.link}
         target={"_blank"}
         rel={"noopener noreferrer"}
-        key={index}
+        key={socialLink.alternateText}
       >
         <Image
           className={"contact-icon"}

@@ -15,7 +15,7 @@ import Java from "../../assets/java.svg";
 import Azure from "../../assets/azure.svg";
 import Kubernetes from "../../assets/kubernetes.svg";
 
-export const favouriteProjects = [
+export const favouriteProjects: Project[] = [
   {
     title: "Bookings and Claims Project",
     body: [
@@ -66,7 +66,7 @@ export const favouriteProjects = [
   },
 ];
 
-export const otherProjects = [
+export const otherProjects: Project[] = [
   {
     title: "Car Part and Order Number Refresh",
     body: [

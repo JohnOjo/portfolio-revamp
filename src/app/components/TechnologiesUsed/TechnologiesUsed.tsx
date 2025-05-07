@@ -5,8 +5,8 @@ import { TECHNOLOGIES_USED } from "@/app/constants/headerConstants";
 
 const TechnologiesUsed = () => {
   const renderTechnologies = () => {
-    return technologiesUsed.map((technology, index) => (
-      <TechnologyItem key={index} technology={technology} />
+    return technologiesUsed.map((technology) => (
+      <TechnologyItem key={technology.name} technology={technology} />
     ));
   };
 

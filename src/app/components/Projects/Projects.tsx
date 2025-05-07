@@ -48,11 +48,11 @@ const Projects = () => {
     );
   };
 
-  const generateProjectInfo = (whoIsItFor: any) => {
+  const generateProjectInfo = (whoIsItFor: string[]) => {
     if (whoIsItFor?.length > 0) {
       return whoIsItFor.map((bodyItem: any, index: any) => {
         return (
-          <li className={"list"} key={index}>
+          <li className={"list"} key={bodyItem}>
             <span className={"list-span"}>{bodyItem}</span>
           </li>
         );
@@ -60,7 +60,7 @@ const Projects = () => {
     }
   };
 
-  const generateProjectTechnologies = (technologies: any) => {
+  const generateProjectTechnologies = (technologies: string[]) => {
     if (technologies?.length > 0) {
       return technologies.map((technology: any, index: any) => {
         return (
