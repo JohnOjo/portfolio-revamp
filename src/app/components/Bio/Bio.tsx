@@ -3,6 +3,23 @@ import { bioData, socialLinks } from "@/app/data/homePageData";
 import Image from "next/image";
 
 const Bio = () => {
+  const renderSocialLinks = () => {
+    return socialLinks.map((socialLink, index) => (
+      <a
+        href={socialLink.link}
+        target={"_blank"}
+        rel={"noopener noreferrer"}
+        key={index}
+      >
+        <Image
+          className={"contact-icon"}
+          src={socialLink.icon}
+          alt={socialLink.alternateText}
+        />
+      </a>
+    ));
+  };
+
   return (
     <div className={"about-me-container"}>
       <div className={"about-me-bio"}>
@@ -19,41 +36,7 @@ const Bio = () => {
           <div className={"about-me-subtitle-end"}>{bioData.subtitleEnd}</div>
         </div>
         <div className={"about-me-body"}>{bioData.body}</div>
-        <div className={"contact-icons-container"}>
-          <a
-            href={socialLinks.linkedIn}
-            target={"_blank"}
-            rel={"noopener noreferrer"}
-          >
-            <Image
-              className={"contact-icon"}
-              src={socialLinks.linkedInIcon}
-              alt={"LinkedIn"}
-            />
-          </a>
-          <a
-            href={socialLinks.cv}
-            target={"_blank"}
-            rel={"noopener noreferrer"}
-          >
-            <Image
-              className={"contact-icon"}
-              src={socialLinks.cvIcon}
-              alt={"CV"}
-            />
-          </a>
-          <a
-            href={socialLinks.leetCode}
-            target={"_blank"}
-            rel={"noopener noreferrer"}
-          >
-            <Image
-              className={"contact-icon"}
-              src={socialLinks.leetCodeIcon}
-              alt={"LeetCode"}
-            />
-          </a>
-        </div>
+        <div className={"contact-icons-container"}>{renderSocialLinks()}</div>
       </div>
       <div className={"about-me-image-container"}>
         <Image

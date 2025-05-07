@@ -17,8 +17,11 @@ import Azure from "../../assets/azure.svg";
 import Kubernetes from "../../assets/kubernetes.svg";
 import Teach from "../../assets/teach.svg";
 import Lecture from "../../assets/lecture.svg";
+import LinkedInIcon from "../../assets/linked-in.svg";
+import CVIcon from "../../assets/cv.svg";
+import LeetCodeIcon from "../../assets/leetcode.svg";
 
-export const technologiesUsed = [
+export const technologiesUsed: Technology[] = [
   { name: "Java", logo: Java },
   { name: "React", logo: ReactImage },
   { name: "Node.js", logo: NodeJs },
@@ -49,16 +52,25 @@ export const bioData = {
   johnImage: require("../../assets/john_image.png"),
 };
 
-export const socialLinks = {
-  linkedIn: "https://www.linkedin.com/in/john-ojo/",
-  leetCode: "https://leetcode.com/johnojo97/",
-  cv: "https://github.com/JohnOjo/Portfolio/blob/main/src/assets/John%20Ojo%20-%20CV.pdf",
-  linkedInIcon: require("../../assets/linked-in.svg"),
-  leetCodeIcon: require("../../assets/leetcode.svg"),
-  cvIcon: require("../../assets/cv.svg"),
-};
+export const socialLinks: SocialLink[] = [
+  {
+    link: "https://www.linkedin.com/in/john-ojo",
+    icon: LinkedInIcon,
+    alternateText: "LinkedIn",
+  },
+  {
+    link: "https://github.com/JohnOjo/Portfolio/blob/main/src/assets/John%20Ojo%20-%20CV.pdf",
+    icon: CVIcon,
+    alternateText: "CV",
+  },
+  {
+    link: "https://leetcode.com/johnojo97",
+    icon: LeetCodeIcon,
+    alternateText: "LeetCode",
+  },
+];
 
-export const aboutCards = [
+export const aboutCards: GivingBack[] = [
   {
     title: "Teaching Students",
     text: "Sharing information is one of the great things about our industry. There are plenty of online resources and question and answer websites to gain information from. This got me thinking, “How can I help others learn and grow in our industry?”. In 2021 I joined in on teaching university students industry technologies and practices. Seeing them innovate and work as a team was a joy to watch and be part of. I was able to give them knowledge that I didn’t have when I was in school and help nurture our industry.",
